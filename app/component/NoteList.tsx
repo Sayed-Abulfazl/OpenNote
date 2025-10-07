@@ -13,9 +13,9 @@ import { useTheme } from "../context/useTheme";
 import { defaultNotes } from "../constants";
 
 export default function NoteList() {
-    const [copidID, setCopiedID] = useState<any>(null);
+    const [copidID, setCopiedID] = useState<string | number | null>(null);
 
-    const [notes, setNotes] = useState<any[]>([]);
+    const [notes, setNotes] = useState<string[] | number[]>([]);
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 

@@ -1,14 +1,11 @@
-"use client"
 
 import { FaSadCry } from "react-icons/fa";
 import { SiQuicklook } from "react-icons/si";
-import { useTheme } from "./context/useTheme"
 import Link from "next/link";
 
 export default function notFound(){
-    const { noteV1MOde } = useTheme();
     return(
-        <div className={`FCC gap-3 flex-col h-screen ${noteV1MOde === 'light' ? 'bg-white text-black' : 'bg-black text-white'}`}>
+        <div className={`FCC gap-3 flex-col h-screen bg-black text-white`}>
             <div className="text-2xl lg:text-3xl FCC gap-2">
                 <span>
                     Not Found Any Page

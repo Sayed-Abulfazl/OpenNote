@@ -10,9 +10,10 @@ import 'swiper/css/navigation'
 import { Autoplay, EffectCoverflow, } from 'swiper/modules'
 import { useState } from 'react'
 import ShowPictureFullPage from './ShowPictureFullPage'
+import Image from 'next/image'
 
 export default function SwiperSlider({ srcs }) {
-    const [showImage, setShowImage] = useState<String | null>(null);
+    const [showImage, setShowImage] = useState<String | object | null>(null);
     return (
         <div>
             <Swiper
@@ -36,7 +37,7 @@ export default function SwiperSlider({ srcs }) {
             >
                 {srcs.map((src, index) => (
                     <SwiperSlide key={index}>
-                        <img src={src} alt={src} onClick={() => setShowImage(src)} className="h-auto w-full object-cover" />
+                        <Image src={src} width={100} height={100} alt={src} onClick={() => setShowImage(src)} className="h-auto w-full object-cover" />
                     </SwiperSlide>
                 ))}
             </Swiper>

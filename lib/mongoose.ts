@@ -1,4 +1,5 @@
-const { mongoose } = require('mongoose');
+// const { mongoose } = require('mongoose'); // can not import this kind
+import mongoose from 'mongoose';
 
 export const connectDB = async () => {
     if(mongoose.connection.readyState >= 1){

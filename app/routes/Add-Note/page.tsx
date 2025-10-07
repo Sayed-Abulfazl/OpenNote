@@ -13,11 +13,11 @@ export default function AddNote() {
     const bodyRef = useRef<HTMLTextAreaElement | null>(null)
     const eBodyRef = useRef<HTMLSpanElement | null>(null)
 
-    const [author, setAuthor] = useState<any>('');
-    const [body, setBody] = useState<any>('');
+    const [author, setAuthor] = useState<string | number | ''>('');
+    const [body, setBody] = useState<string | number | ''>('');
     const [gender, setGender] = useState<string>('male');
 
-    const [error, setError] = useState<String | null>(null);
+    const [error, setError] = useState<string | null>(null);
     const [succeess, setSucceess] = useState<boolean>(false);
     const [wantOut, setWantOut] = useState<boolean>(false);
 
@@ -86,7 +86,8 @@ export default function AddNote() {
                     outNotific();
                 }
             }
-            catch (err) {
+            catch(err) {
+                console.error('----------', err)
                 setError('Problem in fetching data !')
             }
         }
