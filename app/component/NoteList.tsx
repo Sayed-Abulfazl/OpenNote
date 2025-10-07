@@ -157,7 +157,7 @@ export default function NoteList() {
                                             </motion.div>
                                             {/* Default Notes start */}
                                             {
-                                                Array.isArray(defaultNotes) && defaultNotes.length > 1 ? defaultNotes.map((note) => (
+                                                Array.isArray(defaultNotes) && defaultNotes.length > 1 ? defaultNotes.map((note, index, arr) => (
                                                     <motion.div
                                                         key={note._id}
                                                         variants={child}
@@ -226,8 +226,11 @@ export default function NoteList() {
                                 </Link> */}
 
                                                         </div>
-
+                                                        <div className="absolute left-4 top-3 text-2xl lg:text-3xl font-bold">
+                                                            {arr.length - index}
+                                                        </div>
                                                     </motion.div>
+
                                                     // end background
                                                 )
                                                 ) : (<div>
@@ -249,16 +252,14 @@ export default function NoteList() {
                             animate={'visible'}
                             variants={parent}
                         >
-                            <div className={`FCC mx-auto rounded-b-full font-semibold sm:max-w-[500px] lg:max-w-[700px] items-center text-lg lg:text-xl font-serif ${noteV1Mode === 'light' ? 'bg-amber-300' : 'bg-amber-700'} `}>
+                            <div className={`FCC mx-auto pb-3 pt-2 rounded-b-full font-semibold sm:max-w-[500px] lg:max-w-[700px] items-center text-lg lg:text-xl font-serif ${noteV1Mode === 'light' ? 'bg-amber-300' : 'bg-amber-700'} `}>
                                 <div className="FCC gap-1">
                                     <span>Numbers of Notes: </span>
-                                    <span className="">
-                                        {notes.length}
-                                    </span>
+                                    {notes.length}
                                 </div>
                             </div>
                             {
-                                Array.isArray(notes) && notes.length > 1 ? notes.map((note) => (
+                                Array.isArray(notes) && notes.length > 1 ? notes.map((note, index, arr) => (
                                     <motion.div
                                         key={note._id}
                                         variants={child}
@@ -328,6 +329,10 @@ export default function NoteList() {
 
                                         </div>
 
+                                        <div className="absolute left-4 top-3 text-2xl lg:text-3xl font-bold">
+                                            {arr.length - index}
+                                        </div>
+
                                     </motion.div>
                                     // end background
                                 )
@@ -347,6 +352,7 @@ export default function NoteList() {
                         />
                     </div>
                 }
+
             </div>
         )
     }
@@ -395,7 +401,7 @@ export default function NoteList() {
                                             </motion.div>
                                             {/* Default Notes start */}
                                             {
-                                                Array.isArray(defaultNotes) && defaultNotes.length > 1 ? defaultNotes.map((note) => (
+                                                Array.isArray(defaultNotes) && defaultNotes.length > 1 ? defaultNotes.map((note, index, arr) => (
                                                     <motion.div
                                                         key={note._id}
                                                         variants={child}
@@ -457,6 +463,9 @@ export default function NoteList() {
                                                                     {copidID === note._id ? (<><FaCheckCircle /></>) : (<><MdCopyAll /></>)}
                                                                 </button>
                                                             </div>
+                                                            <div className="absolute right-4 top-3 text-2xl lg:text-3xl font-bold">
+                                                                {arr.length - index}
+                                                            </div>
                                                             {/* 
                                 <Link href={`/routes/${note._id}`} className="FCC gap-1 text-sm lg:text-lg">
                                     Read more
@@ -487,7 +496,7 @@ export default function NoteList() {
                             animate={'visible'}
                             variants={parent}
                         >
-                            <div className={`FCC mx-auto rounded-b-full sm:max-w-[500px] lg:max-w-[700px] items-center text-lg lg:text-xl font-serif font-semibold ${noteV1Mode === 'light' ? 'bg-amber-300' : 'bg-amber-700'}`}>
+                            <div className={`FCC mx-auto pt-2 text-justify pb-3 rounded-b-full sm:max-w-[500px] lg:max-w-[700px] items-center text-lg lg:text-xl font-serif font-semibold ${noteV1Mode === 'light' ? 'bg-amber-300' : 'bg-amber-700'}`}>
                                 <div className="FCC gap-1">
                                     <span>تعداد یاد داشت ها: </span>
                                     <span className="">
@@ -496,7 +505,7 @@ export default function NoteList() {
                                 </div>
                             </div>
                             {
-                                Array.isArray(notes) && notes.length > 1 ? notes.map((note) => (
+                                Array.isArray(notes) && notes.length > 1 ? notes.map((note, index, arr) => (
                                     <motion.div
                                         key={note._id}
                                         variants={child}
@@ -564,6 +573,9 @@ export default function NoteList() {
                                     <MdReadMore />
                                 </Link> */}
 
+                                            <div className="absolute right-4 top-3 text-2xl lg:text-3xl font-bold">
+                                                {arr.length - index}
+                                            </div>
                                         </div>
 
                                     </motion.div>
