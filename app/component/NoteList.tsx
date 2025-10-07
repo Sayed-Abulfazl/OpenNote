@@ -249,7 +249,7 @@ export default function NoteList() {
                             animate={'visible'}
                             variants={parent}
                         >
-                            <div className="flex mx-auto justify-start sm:max-w-[500px] lg:max-w-[700px] items-center text-lg lg:text-xl font-serif">
+                            <div className={`FCC mx-auto rounded-b-full font-semibold sm:max-w-[500px] lg:max-w-[700px] items-center text-lg lg:text-xl font-serif ${noteV1Mode === 'light' ? 'bg-amber-300' : 'bg-amber-700'} `}>
                                 <div className="FCC gap-1">
                                     <span>Numbers of Notes: </span>
                                     <span className="">
@@ -487,7 +487,7 @@ export default function NoteList() {
                             animate={'visible'}
                             variants={parent}
                         >
-                            <div className="flex mx-auto justify-start sm:max-w-[500px] lg:max-w-[700px] items-center text-lg lg:text-xl font-serif">
+                            <div className={`FCC mx-auto rounded-b-full sm:max-w-[500px] lg:max-w-[700px] items-center text-lg lg:text-xl font-serif font-semibold ${noteV1Mode === 'light' ? 'bg-amber-300' : 'bg-amber-700'}`}>
                                 <div className="FCC gap-1">
                                     <span>تعداد یاد داشت ها: </span>
                                     <span className="">
