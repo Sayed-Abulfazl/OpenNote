@@ -329,7 +329,7 @@ export default function NoteList() {
 
                                         </div>
 
-                                        <div className="absolute left-4 top-3 text-2xl lg:text-3xl font-bold">
+                                        <div className="absolute left-4 bottom-3 text-2xl lg:text-3xl font-bold">
                                             {arr.length - index}
                                         </div>
 
@@ -547,7 +547,7 @@ export default function NoteList() {
                                         {/* end grid  */}
 
                                         <div className="absolute top-4 left-4 font-semibold lg:text-lg text-sm">
-                                            {new Date(note.createdAt).toLocaleDateString('fa-AF', { year: 'numeric', month: 'long', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+                                            {new Date(note.createdAt).toLocaleDateString('fa-AF', { timeZone : 'Asia/Kabul', year: 'numeric', month: 'long', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })}
                                         </div>
 
                                         <div className="flex justify-end mb-2 items-center">
@@ -573,7 +573,7 @@ export default function NoteList() {
                                     <MdReadMore />
                                 </Link> */}
 
-                                            <div className="absolute right-4 top-3 text-2xl lg:text-3xl font-bold">
+                                            <div className="absolute right-4 bottom-3 text-2xl lg:text-3xl font-bold">
                                                 {arr.length - index}
                                             </div>
                                         </div>
