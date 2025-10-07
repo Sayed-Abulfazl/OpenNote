@@ -13,6 +13,8 @@ export default function AddNote() {
     const bodyRef = useRef<HTMLTextAreaElement | null>(null)
     const eBodyRef = useRef<HTMLSpanElement | null>(null)
 
+    const addRef = useRef<HTMLButtonElement | null>(null)
+
     const [author, setAuthor] = useState<string | number | ''>('');
     const [body, setBody] = useState<string | number | ''>('');
     const [gender, setGender] = useState<string>('male');
@@ -52,6 +54,7 @@ export default function AddNote() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!(author && body)) {
+            addRef.current.disabled = true;
             if (!author) {
                 authorRef.current.style.borderColor = 'red'
                 authorRef.current.disabled = true;
@@ -84,6 +87,7 @@ export default function AddNote() {
                     setBody('');
                     setGender('male');
                     outNotific();
+                    addRef.current.disabled = true;
                 }
             }
             catch(err) {
@@ -94,12 +98,14 @@ export default function AddNote() {
 
         setTimeout(() => {
             authorRef.current.style.borderColor = 'white';
-            authorRef.current.disabled = true;
+            authorRef.current.disabled = false;
             eAuthorRef.current.style.display = 'none';
 
             bodyRef.current.style.borderColor = 'white';
             bodyRef.current.disabled = false;
             eBodyRef.current.style.display = 'none';
+
+            addRef.current.disabled = false;
         }, 1500)
     }
     const { noteV1Mode, noteV1Lang } = useTheme();
@@ -184,6 +190,7 @@ export default function AddNote() {
                     <div className="FCC gap-3 mt-6 mb-3">
                         <button
                             type="submit"
+                            ref={addRef}
                             className={`px-5 py-1 TD300 ${noteV1Mode === 'light' ? 'bg-amber-200' : 'bg-amber-400'} active:bg-green-600 hover:bg-green-600 text-black font-semibold hover:text-white active:text-white rounded-lg cursor-pointer`}
                         >
                             Add Note
@@ -299,6 +306,7 @@ export default function AddNote() {
                     <div className="FCC gap-3 mt-6 mb-3">
                         <button
                             type="submit"
+                            ref={addRef}
                             className={`px-5 py-1 TD300 ${noteV1Mode === 'light' ? 'bg-amber-200' : 'bg-amber-400'} active:bg-green-600 hover:bg-green-600 text-black font-semibold hover:text-white active:text-white rounded-lg cursor-pointer`}
                         >
                             اضافه یاد داشت
