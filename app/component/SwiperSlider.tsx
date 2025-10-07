@@ -13,7 +13,7 @@ import ShowPictureFullPage from './ShowPictureFullPage'
 import Image from 'next/image'
 
 export default function SwiperSlider({ srcs }) {
-    const [showImage, setShowImage] = useState<String | object | null>(null);
+    const [showImage, setShowImage] = useState<string | object | null>(null);
     return (
         <div>
             <Swiper
