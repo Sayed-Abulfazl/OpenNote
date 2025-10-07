@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "app/page.tsx", "app/components/Shop.tsx", "app/context/CartContext.tsx", "app/context/CartContext.tsx", "app/components/ProductItem.jsx", "app/components/Navbar.jsx", "app/components/modals/ModalShop.jsx", "app/components/SwiperSlider.tsx", "app/components/SwiperSlider.tsx", "app/not-found.jsx", "app/components/BlogList.tsx", "app/blogs/[id]/page.tsx", "app/context/useTheme.js", "app/routes/Setting/page.tsx", "app/context/ThemeContext.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

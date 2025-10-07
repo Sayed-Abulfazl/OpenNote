@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+.FCC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TD300 {
+    transition: all 300ms;
+}
+
+.outMenu {
+    animation: animOutMenu 400ms ease-in backwards;
+}
+
+@keyframes animOutMenu {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    to {
+        opacity: 0.5;
+        transform: translateY(-700px);
+    }
+}
+
+.openMenu {
+    animation: animOpenMenu 400ms ease-out forwards;
+}
+
+@keyframes animOpenMenu {
+    from {
+        opacity: 0.5;
+        transform: translateY(-700px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+/* Style of title in about component */
+/* .title2 {
+    letter-spacing: .1em;
+    color: black;
+    text-shadow: 0 0 10px rgb(217, 26, 163),
+        0 0 20px rgb(217, 26, 163),
+        0 0 50px rgb(217, 26, 163);
+} */
+.title1 {
+    letter-spacing: .2em;
+    color: white;
+    text-shadow: 0 0 5px rgb(220, 199, 10),
+        0 0 10px rgb(220, 199, 10),
+        0 0 30px rgb(220, 199, 10);
+}
+
+/* .lightBar1 {
+    background-color: black;
+    animation: animateLightbar 5s linear infinite;
+    box-shadow: 0 0 10px rgb(217, 26, 163),
+        0 0 20px rgb(217, 26, 163),
+        0 0 50px rgb(217, 26, 163),
+        0 0 80px rgb(217, 26, 163);
+} */
+.lightBar1 {
+    background-color: white;
+    animation: animateLightbar 5s linear infinite;
+    box-shadow: 0 0 10px rgb(220, 199, 10),
+        0 0 20px rgb(220, 199, 10),
+        0 0 50px rgb(220, 199, 10),
+        0 0 80px rgb(220, 199, 10);
+}
+
+@keyframes animateLightbar {
+    0% {
+        transform: scaleY(0) translateX(0);
+    }
+
+    10% {
+        transform: scaleY(1) translateX(0);
+    }
+
+    90% {
+        transform: scaleY(1) translateX(215px);
+    }
+
+    100% {
+        transform: scaleY(0) translateX(215px);
+    }
+
+}
+
+.topLayer1 {
+    background-color: white;
+    animation: animateTopLayer 10s linear infinite;
+}
+
+/* .topLayer2 {
+    background-color: black;
+    animation: animateTopLayer 10s linear infinite;
+} */
+
+@keyframes animateTopLayer {
+    0% {
+        transform: translateX(0);
+    }
+
+    5% {
+        transform: translateX(0);
+    }
+
+    45% {
+        transform: translateX(100%);
+
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+
+    50.0000001% {
+        transform: translateX(-100%);
+    }
+
+    55% {
+        transform: translateX(-100%);
+    }
+
+    95% {
+        transform: translateX(0px);
+    }
+}
+
+
+/*  Mode State  */
+
+.modeMotion label {
+    width: 300px;
+    height: 150px;
+    background-color: #222;
+    transform: skewX(330deg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 30px;
+    box-shadow:
+        inset 0 3px 15px rgba(0, 0, 0, 0.2),
+        inset 0 2px 2px rgba(0, 0, 0, 0.2),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.modeMotion label input {
+    appearance: none;
+}
+
+.modeMotion label .angle {
+    position: absolute;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 140px solid #0f0;
+    transform: scale(0.6) skewX(30deg) translate(-30px);
+    filter: drop-shadow(0 0 10px #0f0) drop-shadow(0 0 10px #0f0);
+    transition: all 0.7s;
+}
+
+.modeMotion label input:checked~.angle {
+    border-bottom: 140px solid #f00;
+    transform: scale(0.6) skewX(30deg) translate(200px) rotate(180deg);
+    filter: drop-shadow(0 0 10px #f00) drop-shadow(0 0 10px #f00);
+}
+
+.modeMotion label p {
+    font-size: 28px;
+    transform: skewX(30deg);
+    text-transform: uppercase;
+    transition: all .7s;
+}
+
+.modeMotion label p:nth-child(2) {
+    color: #f00;
+    filter: drop-shadow(0 0 10px #f00) drop-shadow(0 0 10px #f00);
+    transform: scale(0) skewX(30deg);
+}
+
+.modeMotion label p:nth-child(3) {
+    color: #0f0;
+    filter: drop-shadow(0 0 10px #0f0) drop-shadow(0 0 10px #0f0);
+    transform: scale(1) skewX(30deg);
+
+}
+
+.modeMotion label input:checked~p:nth-child(2) {
+    transform: scale(1) skewX(30deg);
+}
+
+.modeMotion label input:checked~p:nth-child(3) {
+    transform: scale(0) skewX(30deg);
+}
+
+
+/* ABout */
+
+.openAbout{
+    animation:  animateOpenAbout 500ms ease-in-out;
+}
+@keyframes animateOpenAbout {
+    from{ opacity: 0.2; scale: 0.2; }
+    to{ opacity: 1; scale: 1; }
+}
+.outAbout{
+    animation:  animateOutAbout 500ms ease-in-out;
+}
+@keyframes animateOutAbout {
+    from{ opacity: 1; scale: 1; }
+    to{ opacity: 0.2; scale: 0.2; }
+}
+
+
+.refresh{
+    animation: refresh 3s infinite ease-in-out;
+}
+@keyframes refresh {
+    0%{ rotate: 0deg; scale: 1; }
+    50%{ rotate: 360deg; scale: 1.2; }
+    99%{ rotate: 0deg; scale: 1; }
+}
+
+
+.notificOpen{
+    animation: animaNotificOpen 500ms linear;
+}
+@keyframes animaNotificOpen {
+    0%{ opacity: 0.9; scale: 0.9; transform: translateY(40px); }
+    60%{ opacity: 1; scale: 1; transform: translateY(0px); }
+    100%{ opacity: 1; scale: 1; transform: translateY(0px); }
+}
+.notificOut{
+    animation: animaNotificOut 500ms linear;
+}
+@keyframes animaNotificOut {
+    from{ opacity: 1; scale: 1; transform: translateY(0px); }
+    to{ opacity: 0; scale: 0; transform: translateY(20px); }
+}
